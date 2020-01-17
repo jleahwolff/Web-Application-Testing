@@ -1,35 +1,28 @@
 import React from 'react';
+import Dashboard from './dashboard';
 
 const Display = props => {
     const { hits, balls, fouls, strikes } = props.state;
     console.log(props);
 
-    return (
-        <div className="container">
-          <section className="balls-strikes">
-            <div className="topRow">
-              <div className="home">
-                <h2 className="home_name">Batter Up!</h2>
-                <div className="board-container">
-                  <Dashboard
-                    hitCounter={props.hitCounter}
-                    foulCounter={props.foulCounter}
-                    ballCounter={props.ballCounter}
-                    strikeCounter={props.strikeCounter}
-                    state={props.state}
-                  />
-                  <div className="numbers">
-                    <div className="strikes">{strike}</div>
-                    <div className="balls">{ball}</div>
-                    <div className="hits">{hit}</div>
-                    <div className="fouls">{foul}</div>
-                  </div>
-                </div>
-              </div>
+return (
+    <div className="cont">
+        <h2 className="header"> Here, batter, batter, batter!</h2>
+        <Dashboard
+            countHits={props.countHits}
+            countFouls={props.countFouls}
+            countBalls={props.countBalls}
+            countStrikes={props.countStrikes}
+            state={props.state}
+            />
+            <div className="numbers">
+                <div className="strikes">{strikes}</div>
+                <div className="balls">{balls}</div>
+                <div className="hits">{hits}</div>
+                <div className="fouls">{fouls}</div>
             </div>
-          </section>
-        </div>
-      );
-    };
-    
-    export default Display;
+    </div>
+    )
+};
+
+export default Display;
